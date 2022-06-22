@@ -64,7 +64,7 @@ main.py文件修改<br>
 ```
 另加一行　
 ```
-i+= 1<br>
+i+= 1
 ```
 Pass与capture.release()中间加如下部分代码
 ```
