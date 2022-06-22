@@ -3,6 +3,7 @@
 * 显示检测类别。
 * 检测类别可在 detector.py 文件第60行修改。
 * 若要检测不同位置和方向，可在 main.py 文件第19行和27行，修改2个polygon的点。
+* 检测识别视频存储在test文件夹
 ## 运行环境<br>
 * python 3.6<br>
 * pytorch 1.8<br>
