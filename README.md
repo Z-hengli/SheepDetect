@@ -30,16 +30,16 @@ cd SheepDetect
 基于https://github.com/dyh/unbox_yolov5_deepsort_counting修改<br>
 .idea文件下unbox_yolov5_deepsort_counting.iml文件改名为SheepDetect.iml文件<br>
 main.py文件修改<br>
-13行list_pts_blue = [[204, 305], [227, 431], [605, 522], [1101, 464], [1900, 601], [1902, 495], [1125, 379], [604, 437],[299, 375], [267, 289]]改为list_pts_blue = [[0, 0], [0, 1080], [400, 1080], [400, 0]]<br>
-21行list_pts_yellow = [[181, 305], [207, 442], [603, 544], [1107, 485], [1898, 625], [1893, 701], [1101, 568], [594, 637], [118, 483], [109, 303]]改为list_pts_yellow = [[400, 0], [400, 1080], [800, 1080], [800, 0]]<br>
-34行blue_color_plate = [255, 0, 0]改为blue_color_plate = [15, 0, 0]<br>
-39行yellow_color_plate = [0, 255, 255]改为yellow_color_plate = [0, 0, 0]<br>
-66行capture = cv2.VideoCapture('./video/test.mp4')改为capture = cv2.VideoCapture(r'./video/sheepvideo.mp4')<br>
-121行print(f'类别: {label} | id: {track_id} | 上行撞线 | 上行撞线总数: {up_count} | 上行id列表: {list_overlapping_yellow_polygon}')改为print(f'类别: {label} | id: {track_id} | 总数: {up_count} | id列表: {list_overlapping_yellow_polygon}')<br>
-143行print(f'类别: {label} | id: {track_id} | 下行撞线 | 下行撞线总数: {down_count} | 下行id列表: {list_overlapping_blue_polygon}')改为print(f'类别: {label} | id: {track_id} | 总数: {up_count} | id列表: {list_overlapping_yellow_polygon}')<br>
-193行text_draw = 'DOWN: ' + str(down_count) + \' , UP: ' + str(up_count)改为text_draw = 'all: ' + str(up_count)<br>
-200行cv2.imshow('demo', output_image_frame)改为cv2.imwrite("./images/{}.png".format(i), output_image_frame)<br>
-另加一行i+= 1<br>
+13行　　list_pts_blue = [[204, 305], [227, 431], [605, 522], [1101, 464], [1900, 601], [1902, 495], [1125, 379], [604, 437],[299, 375], [267, 289]]　　改为　　list_pts_blue = [[0, 0], [0, 1080], [400, 1080], [400, 0]]<br>
+21行　　list_pts_yellow = [[181, 305], [207, 442], [603, 544], [1107, 485], [1898, 625], [1893, 701], [1101, 568], [594, 637], [118, 483], [109, 303]]　　改为　　list_pts_yellow = [[400, 0], [400, 1080], [800, 1080], [800, 0]]<br>
+34行　　blue_color_plate = [255, 0, 0]　　改为　　blue_color_plate = [15, 0, 0]<br>
+39行　　yellow_color_plate = [0, 255, 255]　　改为　　yellow_color_plate = [0, 0, 0]<br>
+66行　　capture = cv2.VideoCapture('./video/test.mp4')　　改为　　capture = cv2.VideoCapture(r'./video/sheepvideo.mp4')<br>
+121行　　print(f'类别: {label} | id: {track_id} | 上行撞线 | 上行撞线总数: {up_count} | 上行id列表: {list_overlapping_yellow_polygon}')　　改为　　print(f'类别: {label} | id: {track_id} | 总数: {up_count} | id列表: {list_overlapping_yellow_polygon}')<br>
+143行　　print(f'类别: {label} | id: {track_id} | 下行撞线 | 下行撞线总数: {down_count} | 下行id列表: {list_overlapping_blue_polygon}')　　改为　　print(f'类别: {label} | id: {track_id} | 总数: {up_count} | id列表: {list_overlapping_yellow_polygon}')<br>
+193行　　text_draw = 'DOWN: ' + str(down_count) + \' , UP: ' + str(up_count)　　改为　　text_draw = 'all: ' + str(up_count)<br>
+200行　　cv2.imshow('demo', output_image_frame)　　改为　　cv2.imwrite("./images/{}.png".format(i), output_image_frame)<br>
+另加一行　i+= 1<br>
 Pass与capture.release()中间加如下部分代码<br>
 time_end = time.time()<br>
 　　print('totally cost', time_end - time_start)<br>
