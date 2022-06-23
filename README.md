@@ -76,6 +76,7 @@ time_end = time.time()
 　　fps = 30
 　　size = (960, 540)
 　　file_path = "./test/" + str(int(time.time())) + ".avi"
+　　print('检测识别后视频地址为：',file_path)
 　　fourcc = cv2.VideoWriter_fourcc('I','4','2','0')
 　　video = cv2.VideoWriter( file_path, fourcc, fps, size )
 　　img_array = []
