@@ -26,7 +26,8 @@ cd SheepDetect
 !pip install -r requirements.txt
 ```
 5.运行程序<br>
-待检视频地址写入main.py文件74行
+待检视频地址写入main.py文件74行<br>
+采用的模型在detector.py文件17行修改
 ```
 !python main.py
 ```
